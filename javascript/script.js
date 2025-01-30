@@ -6,7 +6,7 @@ let todos = [];
 // DOM Elements 
 const todoForm = document.getElementById('todo-form');
 const todoInput = document.getElementById('todo-input');
-const todolist = document.getElementById('todo-List');
+const todoList = document.getElementById('todo-List');
 
 // Funtion to rdener todos
 function renderTodos() {
@@ -26,7 +26,7 @@ function renderTodos() {
 // Funtion to add a new todo
 function addTodo(event) {
     event.preventDefault(); //Prevent form submission
-    const newTodo = todoInput.ariaValueMax.trim();
+    const newTodo = todoInput.value.trim();
     if (newTodo) {
         todos.push(newTodo);
         todoInput.value = ''; // clear the input
@@ -38,7 +38,7 @@ function addTodo(event) {
 function editTodo(index) {
     const updatedTodo = prompt('Edit your todo:', todos[index]);
     if (updatedTodo !== null) {
-        todos[index] = updateTodo.trim();
+        todos[index] = updatedTodo.trim();
         renderTodos();
     }
 }
