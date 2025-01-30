@@ -6,18 +6,18 @@ let todos = [];
 // DOM Elements 
 const todoForm = document.getElementById('todo-form');
 const todoInput = document.getElementById('todo-input');
-const todoList = document.getElementById('todo-List');
+const todoList = document.getElementById('todo-list');
 
 // Funtion to rdener todos
 function renderTodos() {
-    todolist.innerHTML = ''; //clear the list
+    todoList.innerHTML = ''; //clear the list
     todos.forEach((todo, index) => {
         const li = document.createElement('li');
         li.className = 'todo-item';
         li.innerHTML = `
             <span>${todo}</span>
             <button onclick="editTodo(${index})">Edit</button>
-            <button onlick="deleteTodo(${index})">Delete</button>
+            <button onclick="deleteTodo(${index})">Delete</button>
         `;
         todoList.appendChild(li);
     });
